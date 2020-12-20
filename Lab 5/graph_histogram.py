@@ -135,29 +135,24 @@ def main():
     plt.show()
     #print(nx.is_connected(G))
     ##################
-    print("No of nodes: 10106")
-    print("No of edges: 50588")
-    print("Average Degree: 10")
-    print("Density of the Graph: 0.000991352")
-    #print("Since the graph isn't connected; diamter of the graph: inf")
-    print("Average Clustering Coefficient: 0.0117455")
-    # q_a=noNodesEdges(G)
-    # q_b=averageDegree(G)
-    # q_c=density(G)
-    # if (nx.is_connected(G)):
-    #     q_d=diameter(G)
-    # ## FROM LIBRARY DIAMTER CALCULATION FOR WEIGHTED GRAPH###
-    #     shortest1 = nx.shortest_path_length(G, weight="w")
-    #     shortest2 = dict(shortest1)
-    #     ecc = nx.eccentricity(G, sp=shortest2)
-    #     diam = nx.diameter(G, e=ecc)
-    #     print("From the Library, Diameter:", diam)
-    # ##########################################################
-    # else:
-    #     print("Since the graph isn't connected; diamter of the graph:",inf)
+
+    q_a=noNodesEdges(G)
+    q_b=averageDegree(G)
+    q_c=density(G)
+    if (nx.is_connected(G)):
+        q_d=diameter(G)
+    ## FROM LIBRARY DIAMTER CALCULATION FOR WEIGHTED GRAPH###
+        shortest1 = nx.shortest_path_length(G, weight="w")
+        shortest2 = dict(shortest1)
+        ecc = nx.eccentricity(G, sp=shortest2)
+        diam = nx.diameter(G, e=ecc)
+        print("From the Library, Diameter:", diam)
+    ##########################################################
+    else:
+        print("Since the graph isn't connected; diamter of the graph:",inf)
    
-    #     q_e=clusteringCoefficient(G)
-    # print("Average Clustering Coefficient:",round(statistics.mean(q_e),6))
+        q_e=clusteringCoefficient(G)
+    print("Average Clustering Coefficient:",round(statistics.mean(q_e),6))
     
     
 if __name__ == "__main__":
